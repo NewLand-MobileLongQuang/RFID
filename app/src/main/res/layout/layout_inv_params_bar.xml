@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/cb_max_rssi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/checkbox"
+                android:text="@string/uhf_record_max_rssi"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_params_bar_text_size"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/cb_mutip_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/checkbox"
+                android:text="@string/uhf_multip_tags"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_params_bar_text_size" />
+
+            <CheckBox
+                android:id="@+id/cb_tid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/checkbox"
+                android:text="@string/uhf_tag_tid"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/cb_rssi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/checkbox"
+                android:text="RSSI"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_params_bar_text_size" />
+
+            <CheckBox
+                android:id="@+id/cb_frequence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/checkbox"
+                android:text="@string/uhf_freq"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_params_bar_text_size" />
+
+            <CheckBox
+                android:id="@+id/cb_protocal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/checkbox"
+                android:text="@string/uhf_protocol"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_params_bar_text_size"
+                android:visibility="gone" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uhf_unic_count"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size"/>
+
+        <EditText
+            android:id="@+id/et_target_count"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="70dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_total_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/uhf_total_count"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <TextView
+            android:id="@+id/tv_total_tags_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/uhf_total_tag"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <TextView
+            android:id="@+id/tv_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/uhf_inv_speed"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Time:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <EditText
+            android:id="@+id/et_time"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/uhf_read_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <com.nlscan.uhf.demox.util.view.TimerTextView
+            android:id="@+id/tv_inv_span_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:minWidth="20dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_params_bar_text_size" />
+
+        <TextView
+            android:id="@+id/tv_battery_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/battery_temperature"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

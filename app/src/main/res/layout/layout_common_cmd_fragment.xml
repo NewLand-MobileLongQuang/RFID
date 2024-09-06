@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scr_swr"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.nlscan.uhf.demox.view.ConstraintLayoutPreFixText
+                android:id="@+id/cl_module_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:padding="15dp"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:prefixTxt="@string/left_top_module_info">
+
+                <TextView
+                    android:id="@+id/tv_module_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="no info found"></TextView>
+
+            </com.nlscan.uhf.demox.view.ConstraintLayoutPreFixText>
+
+            <com.nlscan.uhf.demox.view.ConstraintLayoutPreFixText
+                android:id="@+id/ctv_common_cmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:padding="15dp"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_module_info"
+                app:prefixTxt="@string/left_top_common_cmd">
+
+                <EditText
+                    android:id="@+id/cmd_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toStartOf="@id/is_ascii"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="spread"></EditText>
+
+
+                <ToggleButton
+                    android:id="@+id/is_ascii"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:checked="true"
+                    android:text="USING ASCII(TAG-SUBTAG-DATA)"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/cmd_input"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="spread"></ToggleButton>
+
+                <EditText
+                    android:id="@+id/cmd_output"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:inputType="textMultiLine"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cmd_input"></EditText>
+
+
+                <Button
+                    android:id="@+id/cmd_send"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/send_cmd"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/cmd_clear"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cmd_output"></Button>
+
+
+                <Button
+                    android:id="@+id/cmd_clear"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/clear_cmd"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/switch_baud"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/cmd_send"
+                    app:layout_constraintTop_toBottomOf="@id/cmd_output"></Button>
+
+                <Button
+                    android:id="@+id/switch_baud"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="switch baud"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/cmd_clear"
+                    app:layout_constraintTop_toBottomOf="@+id/cmd_output"></Button>
+
+                <View
+                    android:id="@+id/split_under_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="invisible"
+                    app:layout_constraintTop_toBottomOf="@+id/timeout_inv"></View>
+
+                <EditText
+                    android:id="@+id/timeout_inv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="timeout seconds"
+                    android:inputType="number"
+                    android:text="3"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@id/cmd_send_inv"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cmd_send"></EditText>
+
+                <Button
+                    android:id="@+id/cmd_send_inv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/send_cmd_inv"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/timeout_inv"
+                    app:layout_constraintTop_toBottomOf="@+id/cmd_send"></Button>
+
+
+                <Button
+                    android:id="@+id/btn_swr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="send swr"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/split_under_send" />
+
+
+            </com.nlscan.uhf.demox.view.ConstraintLayoutPreFixText>
+
+
+            <View
+                android:id="@+id/split_under_send_swr"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toBottomOf="@+id/ctv_common_cmd"></View>
+
+            <com.nlscan.uhf.demox.view.ConstraintLayoutPreFixText
+                android:id="@+id/ctv_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:padding="15dp"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/split_under_send_swr"
+                app:prefixTxt="@string/left_top_swr">
+
+                <com.nlscan.uhf.demox.view.IndustryTextSpinnerView
+                    android:id="@+id/swr_antenna"
+                    android:name="@string/swr_ant_name"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:entries="@array/swr_ant"
+                    app:layout_constraintEnd_toStartOf="@id/swr_power"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></com.nlscan.uhf.demox.view.IndustryTextSpinnerView>
+
+                <com.nlscan.uhf.demox.view.IndustryTextSpinnerView
+                    android:id="@+id/swr_power"
+                    android:name="@string/swr_power_name"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:entries="@array/swr_tx"
+                    app:layout_constraintEnd_toStartOf="@+id/swr_region"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/swr_antenna"
+                    app:layout_constraintTop_toTopOf="parent"></com.nlscan.uhf.demox.view.IndustryTextSpinnerView>
+
+
+                <com.nlscan.uhf.demox.view.IndustryTextSpinnerView
+                    android:id="@+id/swr_region"
+                    android:name="@string/swr_region_name"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:entries="@array/swr_region"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/swr_power"
+                    app:layout_constraintTop_toTopOf="parent"></com.nlscan.uhf.demox.view.IndustryTextSpinnerView>
+
+                <Button
+                    android:id="@+id/btn_swr_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/send_cmd"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/swr_region"></Button>
+            </com.nlscan.uhf.demox.view.ConstraintLayoutPreFixText>
+
+
+            <TextView
+                android:id="@+id/txt_swr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ctv_test"></TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
